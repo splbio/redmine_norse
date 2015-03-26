@@ -1,0 +1,8 @@
+<fieldset>
+  <%= content_tag(:p, l(:norse_text_my_page_redirect_help)) %>
+
+  <p>
+    <%= content_tag(:label, l(:norse_label_my_page_redirect)) %>
+    <%= text_field_tag("settings[my_page_redirect]", @settings['my_page_redirect'], :size => '60') %>  </p>
+</fieldset>
+
