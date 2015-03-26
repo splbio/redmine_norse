@@ -3,3 +3,27 @@
 Customizations to Redmine for Norse.
 
 This contains misc tweaks and customizations that don't make sense to put into separate plugins.
+
+== Incoming Email
+
+To accept incoming email, configure your Redmine as described here http://www.redmine.org/projects/redmine/wiki/RedmineReceivingEmails.
+
+To accept anonymous email into a specific project, add the following options
+
+- project=your_project_identifier
+- unknown_user=accept
+- no_permission_check=1
+
+Example
+
+    bundle exec rake redmine:email:receive_imap \
+      unknown_user=accept \
+      no_permission_check=1 \
+      project=your-project-identifier \
+      host=example.com \
+      ssl=true \
+      username=support@example.com \
+      password=password \
+      move_on_success=processed \
+      move_on_failure=failed
+
