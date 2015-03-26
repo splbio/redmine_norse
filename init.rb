@@ -12,3 +12,9 @@ Redmine::Plugin.register :redmine_norse do
              }
            })
 end
+
+ActionDispatch::Callbacks.to_prepare do
+  require_dependency 'my_controller'
+end
+
+MyController.send(:include, RedmineNorse::Patches::MyPageRedirect)
