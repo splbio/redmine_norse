@@ -1,8 +1,7 @@
 Redmine::Plugin.register :redmine_norse do
-  name 'Redmine Norse plugin'
-  author 'Author name'
-  description 'This is a plugin for Redmine'
-  version '0.0.1'
-  url 'http://example.com/path/to/plugin'
-  author_url 'http://example.com/about'
+  name 'Redmine Norse'
+  author 'Eric Davis'
+  description "Customizations to Redmine for Norse"
+  version '1.0.0'
+  author_url 'http://www.littlestreamsoftware.com'
 end
