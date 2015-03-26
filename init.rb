@@ -15,6 +15,8 @@ end
 
 ActionDispatch::Callbacks.to_prepare do
   require_dependency 'my_controller'
+  require_dependency 'version'
 end
 
 MyController.send(:include, RedmineNorse::Patches::MyPageRedirect)
+Version.send(:include, RedmineNorse::Patches::VersionSorting)
