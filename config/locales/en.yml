@@ -1,3 +1,4 @@
-# English strings go here for Rails i18n
 en:
-  # my_label: "My label"
+  norse_text_my_page_redirect_help: "Redirect My Page to a different url. Full or partial urls can be used. A blank here will turn off the redirect. Example: /issues, https://example.com/issues"
+  norse_label_my_page_redirect: "My Page redirect"
+
