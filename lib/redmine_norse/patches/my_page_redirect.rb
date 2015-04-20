@@ -6,7 +6,7 @@ module RedmineNorse
       included do
         unloadable
 
-        before_filter :redirect_my_page_if_redirect_configured
+        before_filter :redirect_my_page_if_redirect_configured, :only => [:page, :index]
       end
 
       # If the my_page_redirect setting is configured, redirect all users

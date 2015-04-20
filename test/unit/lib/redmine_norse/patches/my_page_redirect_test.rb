@@ -30,6 +30,22 @@ class RedmineNorse::Patches::MyPageRedirectTest < Redmine::IntegrationTest
       get "/my/page"
       assert_response :redirect
       assert_redirected_to "/issues?custom_params=1"
+
+      get "/my"
+      assert_response :redirect
+      assert_redirected_to "/issues?custom_params=1"
+    end
+
+    should "not redirect other pages" do
+      get "/"
+      log_user 'jsmith', 'jsmith'
+
+      ["my/account", "my/password"].each do |test_page|
+        get "/#{test_page}"
+        assert_response :success
+        assert_template test_page
+      end
+
     end
   end
 
